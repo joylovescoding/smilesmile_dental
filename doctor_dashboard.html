@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard | Pearl Dental Clinic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            Pearl<span>Dental</span>
+        </a>
+
+        <nav>
+            <a href="index.html">View Website</a>
+        </nav>
+
+        <span class="dashboard-label">Doctor Dashboard Demo</span>
+    </header>
+
+    <main class="dashboard-section">
+        <div class="dashboard-heading">
+            <p class="eyebrow">STAFF AREA</p>
+            <h1>Doctor Dashboard</h1>
+            <p>View your sample schedule and manage your demo status.</p>
+        </div>
+
+        <section class="dashboard-card">
+            <div class="dashboard-profile">
+                <div class="doctor-avatar">👩‍⚕️</div>
+                <div>
+                    <h2>Dr. Amina Hassan</h2>
+                    <p>General Dentist</p>
+                </div>
+            </div>
+
+            
+<div class="dashboard-status">
+    <span>Current demo status</span>
+
+    <button
+        type="button"
+        id="doctor-status"
+        class="availability available"
+    >
+        Available
+    </button>
+</div>
+
+<button
+    type="button"
+    id="toggle-doctor-status"
+    class="primary-button"
+>
+    Change Availability
+</button>
+
+
+            <div class="dashboard-schedule">
+                <h3>Sample Weekly Schedule</h3>
+
+                <div class="schedule-row">
+                    <span>Monday – Friday</span>
+                    <strong>8:00 AM – 5:00 PM</strong>
+                </div>
+
+                <div class="schedule-row">
+                    <span>Saturday</span>
+                    <strong>9:00 AM – 1:00 PM</strong>
+                </div>
+
+                <div class="schedule-row">
+                    <span>Sunday</span>
+                    <strong>Off duty</strong>
+                </div>
+            </div>
+
+            <p class="form-note">
+                This is a demonstration dashboard. It has no login,
+                and its schedule is not connected to the patient website.
+            </p>
+            
+<div class="dashboard-status">
+    <span>Dr. Daniel Mwangi</span>
+
+    <button
+        type="button"
+        id="daniel-status"
+        class="availability unavailable"
+    >
+        Unavailable
+    </button>
+</div>
+
+<button
+    type="button"
+    id="toggle-daniel-status"
+    class="primary-button"
+>
+    Change Daniel's Availability
+</button>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Pearl Dental Clinic. Demo project.</p>
+    </footer>
+
+</body>
+
+<script>
+    
+const statusButton = document.getElementById("doctor-status");
+const toggleButton = document.getElementById("toggle-doctor-status");
+
+function displayStatus(isAvailable) {
+    statusButton.classList.toggle("available", isAvailable);
+    statusButton.classList.toggle("unavailable", !isAvailable);
+    statusButton.textContent = isAvailable ? "Available" : "Unavailable";
+}
+
+const savedStatus = localStorage.getItem("pearlDoctorAvailable");
+
+displayStatus(savedStatus !== "false");
+
+toggleButton.addEventListener("click", function () {
+    const isAvailable = statusButton.classList.contains("available");
+    const newStatus = !isAvailable;
+
+    localStorage.setItem("pearlDoctorAvailable", newStatus);
+    displayStatus(newStatus);
+});
+
+</script>
+
+<script>
+    const statusButton = document.getElementById("doctor-status");
+    const toggleButton = document.getElementById("toggle-doctor-status");
+
+    function displayStatus(isAvailable) {
+        statusButton.classList.toggle("available", isAvailable);
+        statusButton.classList.toggle("unavailable", !isAvailable);
+        statusButton.textContent = isAvailable ? "Available" : "Unavailable";
+    }
+
+    const savedStatus = localStorage.getItem("pearlDoctorAvailable");
+    displayStatus(savedStatus !== "false");
+
+    toggleButton.addEventListener("click", function () {
+        const isAvailable = statusButton.classList.contains("available");
+        const newStatus = !isAvailable;
+
+        localStorage.setItem("pearlDoctorAvailable", newStatus);
+        displayStatus(newStatus);
+    });
+</script>
+</body>
+</html>
+

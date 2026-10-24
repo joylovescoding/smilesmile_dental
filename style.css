@@ -1,0 +1,851 @@
+
+/* 1. BASIC PAGE STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #263b42;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 2. NAVIGATION BAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 7%;
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(30, 70, 80, 0.06);
+}
+
+.logo {
+    color: #174d54;
+    font-size: 24px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #27a6a1;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 22px;
+}
+
+.navbar nav a {
+    color: #52666c;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #169c96;
+}
+
+.nav-button,
+.primary-button {
+    display: inline-block;
+    background: #168f8a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.nav-button:hover,
+.primary-button:hover {
+    background: #116e6a;
+    transform: translateY(-2px);
+}
+
+/* 3. WELCOME SECTION */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+    padding: 90px 10%;
+    background: #f0f9f9;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.eyebrow {
+    color: #168f8a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: #174d54;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #168f8a;
+}
+
+.hero-description {
+    color: #61747a;
+    font-size: 17px;
+    max-width: 480px;
+    margin-bottom: 28px;
+}
+
+.hero-note {
+    color: #61747a;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+/* 4. DECORATIVE HERO PANEL */
+.hero-visual {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    background: linear-gradient(145deg, #d6f1ef, #e8f4fb);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.tooth-icon {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 50%;
+    font-size: 78px;
+    box-shadow: 0 12px 35px rgba(30, 90, 100, 0.1);
+}
+
+.hero-visual p {
+    color: #174d54;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* 5. PLACEHOLDER SECTIONS */
+main > section:not(.hero) {
+    padding: 70px 10%;
+    scroll-margin-top: 20px;
+}
+
+main > section:not(.hero) h2 {
+    color: #174d54;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+main > section:not(.hero) p {
+    color: #61747a;
+}
+
+/* 6. FOOTER */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #174d54;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/* 7. MOBILE RESPONSIVENESS */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 18px 5%;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 7%;
+        gap: 35px;
+    }
+
+    .hero-visual {
+        min-height: 250px;
+    }
+
+    main > section:not(.hero) {
+        padding: 55px 7%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-button {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .tooth-icon {
+        width: 120px;
+        height: 120px;
+        font-size: 62px;
+    }
+}
+
+/* SERVICES SECTION */
+.services-section {
+    background: #ffffff;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: clamp(28px, 4vw, 38px);
+}
+
+.section-heading > p:last-child {
+    margin-top: 12px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.service-card {
+    padding: 26px;
+    background: #f7fbfb;
+    border: 1px solid #e2eeee;
+    border-radius: 16px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(30, 90, 100, 0.1);
+    border-color: #a8dcd8;
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    background: #dff4f2;
+    border-radius: 14px;
+    font-size: 26px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: #174d54;
+    font-size: 18px;
+}
+
+.service-card p {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.service-card a {
+    color: #168f8a;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.service-card a:hover {
+    color: #116e6a;
+}
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 22px;
+    }
+}
+
+/* OPENING HOURS */
+.hours-section {
+    background: #f0f9f9;
+}
+
+.hours-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e2eeee;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(30, 90, 100, 0.05);
+}
+
+.hours-intro {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.hours-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #dff4f2;
+    font-size: 25px;
+}
+
+.hours-intro h3 {
+    color: #174d54;
+    margin-bottom: 4px;
+}
+
+.hours-intro p {
+    font-size: 14px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 17px 0;
+    border-bottom: 1px solid #e7eeee;
+}
+
+.hours-row span {
+    color: #52666c;
+}
+
+.hours-row strong {
+    color: #174d54;
+    text-align: right;
+    font-size: 14px;
+}
+
+.hours-note {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f0f9f9;
+    color: #52666c;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+@media (max-width: 480px) {
+    .hours-card {
+        padding: 20px;
+    }
+
+    .hours-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .hours-row strong {
+        text-align: left;
+    }
+}
+
+/* LOCATION SECTION */
+.location-section {
+    background: #ffffff;
+}
+
+.location-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.location-card {
+    padding: 28px;
+    border: 1px solid #e2eeee;
+    border-radius: 18px;
+    background: #f7fbfb;
+}
+
+.location-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 18px;
+    background: #dff4f2;
+    border-radius: 14px;
+    font-size: 25px;
+}
+
+.location-card h3,
+.directions-box h4 {
+    color: #174d54;
+    margin-bottom: 12px;
+}
+
+.location-card > p {
+    margin-bottom: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.directions-box {
+    margin: 22px 0;
+    padding: 18px;
+    background: #ffffff;
+    border-left: 4px solid #168f8a;
+    border-radius: 8px;
+}
+
+.directions-box p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.map-button {
+    margin-top: 4px;
+}
+
+.map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    padding: 28px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #dff4f2, #e8f4fb);
+    text-align: center;
+}
+
+.map-placeholder > span {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.map-placeholder h3 {
+    color: #174d54;
+    margin-bottom: 10px;
+}
+
+.map-placeholder p {
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+    .location-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .map-placeholder {
+        min-height: 250px;
+    }
+
+    .location-card {
+        padding: 22px;
+    }
+}
+
+/* Appointment booking form */
+.appointment-section {
+    padding: 80px 8%;
+    background: #f4f8f7;
+}
+
+.appointment-form {
+    max-width: 760px;
+    margin: 35px auto 0;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(20, 60, 55, 0.08);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #234b48;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d7e3e0;
+    border-radius: 9px;
+    background: #ffffff;
+    font: inherit;
+    color: #263b39;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #8fc9bd;
+    border-color: #438f81;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.appointment-form button {
+    border: none;
+    cursor: pointer;
+    justify-self: start;
+}
+
+.form-note {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: #637572;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .appointment-form {
+        grid-template-columns: 1fr;
+        padding: 22px;
+    }
+
+    .full-width,
+    .form-note {
+        grid-column: auto;
+    }
+
+    .appointment-form button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Doctor availability section */
+.doctors-section {
+    padding: 80px 8%;
+    background: #ffffff;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.doctor-card {
+    padding: 28px 22px;
+    text-align: center;
+    border: 1px solid #e0ebe7;
+    border-radius: 18px;
+    background: #f9fcfb;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(20, 60, 55, 0.08);
+}
+
+.doctor-avatar {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.doctor-card h3 {
+    color: #234b48;
+    margin-bottom: 8px;
+}
+
+.doctor-specialty {
+    color: #637572;
+    margin-bottom: 18px;
+}
+
+.availability {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.availability.available {
+    color: #176b46;
+    background: #e1f5e9;
+}
+
+.availability.unavailable {
+    color: #a43e3e;
+    background: #fde8e8;
+}
+
+.doctor-button {
+    display: block;
+    margin-top: 22px;
+    padding: 12px;
+    border-radius: 9px;
+    background: #286c63;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.doctor-button:hover {
+    background: #1d514b;
+}
+
+.availability-note {
+    margin-top: 25px;
+    text-align: center;
+    color: #637572;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+    .doctors-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .doctors-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.availability {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.availability:focus-visible {
+    outline: 2px solid #286c63;
+    outline-offset: 3px;
+}
+
+/* Doctor dashboard */
+.dashboard-section {
+    min-height: 75vh;
+    padding: 65px 8%;
+    background: #f4f8f7;
+}
+
+.dashboard-heading {
+    max-width: 760px;
+    margin: 0 auto 30px;
+}
+
+.dashboard-heading h1 {
+    margin-bottom: 12px;
+    color: #234b48;
+}
+
+.dashboard-heading > p:last-child {
+    color: #637572;
+    line-height: 1.6;
+}
+
+.dashboard-label {
+    color: #286c63;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dashboard-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #e0ebe7;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(20, 60, 55, 0.06);
+}
+
+.dashboard-profile {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e0ebe7;
+}
+
+.dashboard-profile h2 {
+    color: #234b48;
+    margin-bottom: 6px;
+}
+
+.dashboard-profile p {
+    color: #637572;
+}
+
+.dashboard-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 0;
+}
+
+.dashboard-schedule h3 {
+    margin-bottom: 15px;
+    color: #234b48;
+}
+
+.schedule-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e8efed;
+    color: #526663;
+}
+
+.schedule-row strong {
+    color: #234b48;
+    text-align: right;
+}
+
+.dashboard-card .form-note {
+    margin-top: 22px;
+}
+
+@media (max-width: 600px) {
+    .dashboard-card {
+        padding: 22px;
+    }
+
+    .dashboard-status,
+    .schedule-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .schedule-row strong {
+        text-align: left;
+    }
+}
+
+/* Doctor availability controls */
+.dashboard-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 0;
+    border-bottom: 1px solid #e8efed;
+    color: #234b48;
+}
+
+#toggle-doctor-status,
+#toggle-daniel-status {
+    margin-bottom: 18px;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+#toggle-doctor-status:hover,
+#toggle-daniel-status:hover {
+    filter: brightness(0.92);
+}
+
+.dashboard-status .availability {
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .dashboard-status {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
